@@ -1,5 +1,5 @@
 import './App.css';
-import { reportWebVitals } from 'web-vitals';
+
 
 import styled from 'styled-components';
 import Contact from './components/Contact';
