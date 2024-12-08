@@ -23,7 +23,6 @@ flex: 2;
 display:flex;
 flex-direction:column;
 justify-content:center;
-gap:20px;
 margin-left:100px;
 
 `
@@ -41,7 +40,8 @@ gap:10px;
 const Line = styled.img`
 filter:invert(1);
 height:5px;
-width:40px;
+width:30px;
+border-radius:105px;
 
 
 `
@@ -65,7 +65,6 @@ width:100px;
 `
 const Right = styled.div`
 flex:3;
-background-color:#285858;
 marginleft:100px;
 display:flex;
 align-items:center;
