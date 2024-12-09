@@ -97,7 +97,7 @@ animation: animate 2s infinite ease alternate;
 
 @keyframes animate{
   from{
-    transform:translateY(-10px);
+    transform:translateY(-20px);
   }
   to{
     transform:translateY(10px);
