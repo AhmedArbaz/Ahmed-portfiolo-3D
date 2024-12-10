@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Navbar from './Navbar'
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls  } from "@react-three/drei";
+import { Sphere, MeshDistortMaterial } from '@react-three/drei';
 
 const Section = styled.div`
 height:100vh;
@@ -79,9 +82,9 @@ position:relative;
 
 `
 const Image = styled.img`
-width:400px;
-height:400px;
-border-radius:20px;
+width:250px;
+height:250px;
+border-radius:40px;
 object-fit:contain;
 position:absolute;
 top:0;
@@ -89,6 +92,7 @@ bottom:0;
 left:0;
 right:0;
 margin:auto;
+opacity:90%;
 
 // NOTE: giving animation to image
 animation: animate 2s infinite ease alternate;
@@ -97,7 +101,7 @@ animation: animate 2s infinite ease alternate;
 
 @keyframes animate{
   from{
-    transform:translateY(-20px);
+    transform:translateY(-10px);
   }
   to{
     transform:translateY(10px);
@@ -122,7 +126,20 @@ const Hero = () => {
           <Button>Learn More</Button>
         </Left>
         <Right>
-          {/* 3d model  */}
+            {/* Adding 3d model from test.js*/}
+
+         <Canvas>
+            {/* OrbitControls should be inside Canvas */}
+            <OrbitControls  enableZoom={false}/>
+            <ambientLight intensity={1} /> {/* Adding light for visibility */}
+            <directionalLight position={[3, 3, 2]} />
+            {/* Making sphare 3D */}
+            <Sphere arg={[1,100,200]} scale={2.9}>
+              
+             <MeshDistortMaterial color="#285858" attach="material" distort={0.5} speed={2}/>
+            {/*NOTE:  Mesh ko cube component may dala aur phir aus ko yaha import kar lia hay  */}
+            </Sphere>
+         </Canvas>
           <Image src='./img/technology.png'/>
         </Right>
       </Container>
