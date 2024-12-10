@@ -1,11 +1,11 @@
 import './App.css';
 
-
 import styled from 'styled-components';
 import Contact from './components/Contact';
 import Hero from './components/Hero';
 import Who from './components/Who';
 import Works from './components/Works';
+import Test from './Test';
 
 // Style component install kia aur phir asay use kar sakty hain css likhnay kay liay
 const Container = styled.div`
@@ -30,6 +30,7 @@ function App() {
    <Who/>
    <Works/>
    <Contact/>
+   <Test/>
    </Container>
   );
 }
